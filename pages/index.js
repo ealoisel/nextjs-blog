@@ -4,13 +4,30 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
+import Image from 'next/image'
+
 
 export default function Home({ allPostsData }) {
+  const name = "Emily Loiselle"
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      {
+          <div style={{display: "grid", placeItems: "center"}}>
+            <Image
+              priority
+              styles={{display: "block", marginL: "auto", marginR: "auto", width: "40%"}} 
+              src={"/images/profile.jpg"}
+              className={utilStyles.borderCircle}
+              height={144}
+              width={144}
+              alt={name}
+            />
+            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+          </div>
+        }
       <section className={utilStyles.headingMd}>
         <p>Hi Everybody, I hope you're doing well! I'm a student from purdue.</p>
         <p>
