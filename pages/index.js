@@ -18,38 +18,22 @@ export default function Home({ allPostsData }) {
           <div style={{display: "grid", placeItems: "center"}}>
             <Image
               priority
-              styles={{display: "block", marginL: "auto", marginR: "auto", width: "40%"}} 
+              //styles={{display: "block", marginL: "auto", marginR: "auto", width: "90%"}} 
               src={"/images/profile.jpg"}
               className={utilStyles.borderCircle}
               height={144}
               width={144}
-              alt={name}
+              alt={"Picture of Emily Loiselle"}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </div>
         }
       <section className={utilStyles.headingMd}>
-        <p>Hi Everybody, I hope you're doing well! I'm a student from purdue.</p>
-        <p>
-          (This is my{' '}
-          <a href="https://nextjs.org/learn">github</a>.)
-        </p>
+        <p style = {{display: "grid", placeItems: "center", fontFamily: "Arial"}}>Hi! I'm Emily, a student from purdue.</p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+      <section>
+        <h2 className={utilStyles.headingLg}>Interests</h2>
+        
       </section>
     </Layout>
   )
